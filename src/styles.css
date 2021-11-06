@@ -32,7 +32,7 @@
   transform: translate(-50%, -50%);
   padding-bottom: 3rem;
 
-  background-image: url("/faq-accordion-card-main/images/bg-pattern-mobile.svg");
+  background-image: url("/images/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-position: center bottom 0.8rem;
   background-size: contain;
