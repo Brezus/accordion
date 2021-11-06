@@ -24,20 +24,33 @@
   position: relative;
   border: 1px solid red;
 }
-.bg-img-cont,
-.bg-img-shadow {
+.bg-img-cont {
   width: 80%;
-  position: absolute;
-  top: -10%;
+  position: relative;
+  top: -3%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  padding-bottom: 3rem;
+
+  background-image: url("/faq-accordion-card-main/images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom 0.8rem;
+  background-size: contain;
 }
-.bg-img-shadow {
-  top: 30%;
-  left: 58.5%;
-  z-index: 1;
-}
+
+/* right here i was going to use an after to get the shaodw image below the image with the girl it is not giving me the result i wish for */
+/* .bg-img-cont::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-image: url("/faq-accordion-card-main/images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 50%;
+  width: 100%;
+} */
+
 .section2 {
   grid-column: 2;
   grid-row: 2;
