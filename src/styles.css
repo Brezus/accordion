@@ -85,8 +85,7 @@ body {
   font-family: var(--ff);
   font-weight: var(--fw-medium);
 }
-/* .acordion-header:focus {
-} */
+
 .accordion-content {
   font-size: 0.8rem;
   opacity: 0.7;
@@ -120,6 +119,10 @@ hr {
   background-color: var(--Very-dark-grayish-blue);
   opacity: 0.5;
 }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
 
 @media screen and (min-width: 650px) {
   .bg-img-cont {
@@ -129,25 +132,30 @@ hr {
 
 @media screen and (min-width: 920px) {
   .cover {
-    padding: 5rem 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   .section-cont {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    max-width: 700px;
+    max-width: 800px;
     box-shadow: none;
     background-image: url("/images/bg-pattern-desktop.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left -24.5rem top -13rem;
+    background-position: left -30.5rem top -13rem;
     position: relative;
+    grid-column-gap: 3rem;
   }
   .section-cont::before {
     content: url("/images/illustration-box-desktop.svg");
     position: absolute;
     z-index: 3;
-    left: -15px;
-    top: 15rem;
+    left: -3px;
+    top: 15.5rem;
     transform: translate(-50%, -50%);
   }
   .section1 {
@@ -155,7 +163,7 @@ hr {
     background-image: url("/images/illustration-woman-online-desktop.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: top 4rem left -3rem;
+    background-position: top 4rem left -4rem;
     position: relative;
   }
 
@@ -163,6 +171,7 @@ hr {
     grid-column: 2;
     grid-row: 1;
     padding-top: 2rem;
+    width: 80%;
   }
   .bg-img-cont {
     display: none;
@@ -180,19 +189,9 @@ hr {
     margin-bottom: 0;
   }
   .arrow-down {
-    right: 0rem;
+    right: -1rem;
   }
-
-  /* .bg-img-cont2::after {
-    content: "";
-    position: absolute;
-    background-image: url("/images/bg-pattern-desktop.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
+  .attribution {
+    text-align: left;
+  }
 }
