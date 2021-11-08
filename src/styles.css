@@ -18,21 +18,25 @@ body {
   font-family: var(--ff);
   font-size: var(--fs);
   font-weight: var(--fw-medium);
+  background: linear-gradient(to bottom, var(--Soft-violet), var(--Soft-blue));
+  /* border: 2px solid black; */
 }
 .cover {
-  background: linear-gradient(to bottom, var(--Soft-violet), var(--Soft-blue));
   padding: 12rem 0 5rem;
+  height: 100%;
+  overflow: hidden;
 }
 .section-cont {
   display: grid;
   grid-template-columns: 6vw 1fr 6vw;
   grid-template-rows: 150px 1fr;
-  min-height: 100vh;
-  height: 100%;
   width: 85%;
+  max-width: 700px;
   margin: 0 auto;
   border-radius: 30px;
   background-color: white;
+  box-shadow: rgba(22, 3, 37, 0.45) 0px 50px 100px -20px,
+    rgba(10, 0, 19, 0.5) 0px 30px 60px -30px;
 }
 .section1 {
   grid-column: 2;
@@ -41,6 +45,7 @@ body {
 }
 .bg-img-cont {
   width: 80%;
+  max-width: 380px;
   position: relative;
   top: -0.1%;
   left: 50%;
@@ -51,19 +56,9 @@ body {
   background-position: center bottom 0.8rem;
   background-size: contain;
 }
-
-/* right here i was going to use an after to get the shaodw image below the image with the girl it is not giving me the result i wish for */
-/* .bg-img-cont::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  background-image: url("/faq-accordion-card-main/images/bg-pattern-mobile.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height: 50%;
-  width: 100%;
-} */
+.bg-img-cont2 {
+  display: none;
+}
 
 .section2 {
   grid-column: 2;
@@ -98,19 +93,19 @@ body {
   overflow: hidden;
   height: 0;
   transition: 0.5s;
-  /* padding: 0.3rem 0; */
 }
 .acordion.active .acordion-header {
   color: var(--Very-dark-desaturated-blue);
   font-weight: var(--fw-strong);
+  font-size: 1rem;
 }
 .acordion.active .accordion-content {
-  height: auto;
+  height: 60px;
 }
 .arrow-down {
   position: absolute;
-  right: 0;
-  top: 12%;
+  right: -1rem;
+  top: 0.8rem;
   cursor: pointer;
   padding: 0.3rem;
   transition: 0.5s;
@@ -124,4 +119,71 @@ hr {
   color: var(--Very-dark-grayish-blue);
   background-color: var(--Very-dark-grayish-blue);
   opacity: 0.5;
+}
+
+@media screen and (min-width: 650px) {
+  .bg-img-cont {
+    top: -3%;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .cover {
+    padding: 5rem 0;
+  }
+  .section-cont {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    max-width: 700px;
+    box-shadow: none;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left -25.5rem bottom -4rem;
+    position: relative;
+  }
+  .section-cont::before {
+    content: url("/images/illustration-box-desktop.svg");
+    position: absolute;
+    z-index: 3;
+    left: -15px;
+    top: 57%;
+    transform: translate(-50%, -50%);
+  }
+  .section1 {
+    grid-column: 1;
+    background-image: url("/images/illustration-woman-online-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top 4rem left -4rem;
+    position: relative;
+  }
+
+  .section2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .bg-img-cont {
+    display: none;
+  }
+  .bg-img-cont2 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 20%;
+    left: -20%;
+    /* width: 90%; */
+  }
+  /* .bg-img-cont2::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
 }
