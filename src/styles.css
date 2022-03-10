@@ -23,7 +23,7 @@ body {
 }
 .cover {
   padding: 12rem 0 5rem;
-  height: 100%;
+  min-height: 100%;
   overflow: hidden;
 }
 .section-cont {
@@ -84,6 +84,10 @@ body {
   font-size: 0.95rem;
   font-family: var(--ff);
   font-weight: var(--fw-medium);
+  transition: color 0.5s ease-in;
+}
+.acordion-header:hover {
+  color: var(--Soft-red);
 }
 
 .accordion-content {
@@ -108,6 +112,7 @@ body {
   cursor: pointer;
   padding: 0.3rem;
   transition: 0.5s;
+  opacity: 0;
 }
 .acordion.active .arrow-down {
   transform: rotate(180deg);
@@ -136,7 +141,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   .section-cont {
     grid-template-columns: 1fr 1fr;
@@ -157,7 +162,12 @@ hr {
     left: -3px;
     top: 15.5rem;
     transform: translate(-50%, -50%);
+    transition: left 0.3s;
   }
+  .section-cont:hover:before {
+    left: -30px;
+  }
+
   .section1 {
     grid-column: 1;
     background-image: url("../images/illustration-woman-online-desktop.svg");
